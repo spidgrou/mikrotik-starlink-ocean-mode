@@ -45,6 +45,10 @@ disables it again. Everything else (LAN, router itself) is untouched.
 
 ## Install
 
+> **Strongly recommended:** make a full backup of your router configuration
+> **before** installing. See the [Backup](#backup) section at the bottom of this
+> README for the exact commands.
+
 ```routeros
 # On the router, after uploading the files (WinBox drag & drop or scp):
 /import file-name=install.rsc
