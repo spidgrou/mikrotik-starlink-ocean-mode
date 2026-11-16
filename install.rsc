@@ -88,6 +88,17 @@
 /ip firewall address-list add list=ocean-whitelist address=91.108.20.0/22 comment="telegram-dc"
 /ip firewall address-list add list=ocean-whitelist address=91.108.56.0/22 comment="telegram-dc"
 
+# On-board services (SignalK / Node-RED / Hermes)
+# NOTE: api.stormglass.io, ais.vesselfinder.com and data.aishub.net are
+# deliberately NOT whitelisted.
+/ip firewall address-list add list=ocean-whitelist address="api.openplotter.cloud"
+/ip firewall address-list add list=ocean-whitelist address="iot.openplotter.cloud"
+/ip firewall address-list add list=ocean-whitelist address="www.noforeignland.com"
+/ip firewall address-list add list=ocean-whitelist address="stream.aisstream.io"
+/ip firewall address-list add list=ocean-whitelist address="listener.marinetraffic.com"
+/ip firewall address-list add list=ocean-whitelist address="mail.smtp2go.com"
+/ip firewall address-list add list=ocean-whitelist address="ollama.com"
+
 # --- 2. Ensure the WAN interface list (critical) ---
 # The "drop WAN" rule below matches on out-interface-list=WAN. If that list
 # does not exist, or is empty, the drop rule matches nothing and Ocean Mode
