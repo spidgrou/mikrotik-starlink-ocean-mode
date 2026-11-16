@@ -71,6 +71,22 @@
 /ip firewall address-list add list=ocean-whitelist address="t.co"
 /ip firewall address-list add list=ocean-whitelist address="twttr.com"
 /ip firewall address-list add list=ocean-whitelist address="twimg.com"
+/ip firewall address-list add list=ocean-whitelist address="api.telegram.org"
+/ip firewall address-list add list=ocean-whitelist address="telegram.org"
+/ip firewall address-list add list=ocean-whitelist address="t.me"
+
+# Telegram DC ranges (raw IP -- the clients do not use DNS for these).
+# Source: official Telegram CIDR list (149.154.160.0/20 + 91.108.4.0/22 are the
+# two the Bot API docs recommend; the rest are the app's datacenters).
+/ip firewall address-list add list=ocean-whitelist address=149.154.160.0/20 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=185.76.151.0/24 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.105.192.0/23 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.4.0/22 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.8.0/22 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.12.0/22 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.16.0/22 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.20.0/22 comment="telegram-dc"
+/ip firewall address-list add list=ocean-whitelist address=91.108.56.0/22 comment="telegram-dc"
 
 # --- 2. Ensure the WAN interface list (critical) ---
 # The "drop WAN" rule below matches on out-interface-list=WAN. If that list
