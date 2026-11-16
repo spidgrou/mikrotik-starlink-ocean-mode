@@ -99,6 +99,19 @@
 /ip firewall address-list add list=ocean-whitelist address="mail.smtp2go.com"
 /ip firewall address-list add list=ocean-whitelist address="ollama.com"
 
+# YouTube (upload Shorts). Heavy: an upload is 50-100 MB of OUTBOUND traffic.
+/ip firewall address-list add list=ocean-whitelist address="youtube.com"
+/ip firewall address-list add list=ocean-whitelist address="www.youtube.com"
+/ip firewall address-list add list=ocean-whitelist address="m.youtube.com"
+/ip firewall address-list add list=ocean-whitelist address="studio.youtube.com"
+/ip firewall address-list add list=ocean-whitelist address="upload.youtube.com"
+/ip firewall address-list add list=ocean-whitelist address="youtubei.googleapis.com"
+/ip firewall address-list add list=ocean-whitelist address="youtube.googleapis.com"
+/ip firewall address-list add list=ocean-whitelist address="googlevideo.com"
+/ip firewall address-list add list=ocean-whitelist address="ytimg.com"
+/ip firewall address-list add list=ocean-whitelist address="yt3.ggpht.com"
+/ip firewall address-list add list=ocean-whitelist address="youtu.be"
+
 # --- 2. Ensure the WAN interface list (critical) ---
 # The "drop WAN" rule below matches on out-interface-list=WAN. If that list
 # does not exist, or is empty, the drop rule matches nothing and Ocean Mode
